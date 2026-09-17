@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Major League Cuts | Philadelphia Barber Shop</title>
-  <meta name="description" content="Major League Cuts — barber shop in Philadelphia, Pennsylvania. Skilled barbers, friendly service and good prices.">
 
   <style>
     * {
@@ -20,25 +19,14 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #0a0a0a;
+      background: #080808;
       color: #ffffff;
       line-height: 1.6;
     }
 
     a {
-    .service-image {
-  width: 100%;
-  height: 300px;
-  margin-bottom: 40px;
-  overflow: hidden;
-
-
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+      color: inherit;
+      text-decoration: none;
     }
 
     /* NAVIGATION */
@@ -46,15 +34,15 @@
     nav {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(8, 8, 8, 0.95);
-      border-bottom: 1px solid #252525;
-      backdrop-filter: blur(10px);
+      background: rgba(8, 8, 8, 0.96);
+      border-bottom: 1px solid #242424;
     }
 
-    .nav-container {
-      max-width: 1150px;
+    .nav-inner {
+      max-width: 1200px;
       margin: auto;
       padding: 18px 25px;
       display: flex;
@@ -65,7 +53,7 @@
     .logo {
       font-size: 20px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
     .logo span {
@@ -74,8 +62,9 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 30px;
       font-size: 14px;
+      text-transform: uppercase;
       font-weight: bold;
     }
 
@@ -92,44 +81,31 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 75% 35%, rgba(212,175,55,0.18), transparent 30%),
-        linear-gradient(135deg, #080808, #111111 55%, #050505);
-    }
-
-    .hero::after {
-      content: "✂";
-      position: absolute;
-      right: 8%;
-      bottom: 5%;
-      font-size: 280px;
-      opacity: 0.035;
-      transform: rotate(-15deg);
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.8)),
+        url("pexels-th2city-2318055.jpg") center/cover no-repeat;
     }
 
     .hero-content {
-      max-width: 1150px;
       width: 100%;
+      max-width: 1200px;
       margin: auto;
-      padding: 120px 25px 80px;
-      position: relative;
-      z-index: 2;
+      padding: 130px 25px 80px;
     }
 
-    .eyebrow {
+    .hero small {
       color: #d4af37;
-      font-size: 14px;
-      letter-spacing: 4px;
       font-weight: bold;
-      margin-bottom: 20px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      font-size: clamp(52px, 8vw, 100px);
+      font-size: clamp(50px, 8vw, 100px);
       line-height: 0.95;
+      max-width: 850px;
+      margin: 20px 0;
       text-transform: uppercase;
       font-weight: 900;
-      max-width: 850px;
-      letter-spacing: -3px;
     }
 
     .hero h1 span {
@@ -137,88 +113,96 @@
     }
 
     .hero p {
-      margin-top: 28px;
-      max-width: 570px;
-      color: #bdbdbd;
+      max-width: 550px;
+      color: #cccccc;
       font-size: 18px;
+      margin-bottom: 35px;
     }
 
-    .hero-buttons {
-      margin-top: 35px;
+    .buttons {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
     }
 
-    .btn {
+    .button {
       display: inline-block;
       padding: 15px 25px;
-      border-radius: 4px;
+      background: #d4af37;
+      color: #080808;
       font-weight: bold;
-      transition: 0.25s;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
     }
 
-    .btn-gold {
-      background: #d4af37;
+    .button:hover {
+      background: #ffffff;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+    }
+
+    .button-outline:hover {
+      background: #ffffff;
       color: #080808;
     }
 
-    .btn-gold:hover {
-      transform: translateY(-3px);
-      background: #f0cf63;
-    }
-
-    .btn-outline {
-      border: 1px solid #555;
-      color: white;
-    }
-
-    .btn-outline:hover {
-      border-color: #d4af37;
-      color: #d4af37;
-    }
-
-    /* SECTIONS */
+    /* GENERAL */
 
     section {
-      padding: 90px 25px;
+      padding: 100px 25px;
     }
 
     .container {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: auto;
     }
 
     .section-label {
       color: #d4af37;
-      font-size: 13px;
-      letter-spacing: 3px;
       text-transform: uppercase;
+      font-size: 13px;
       font-weight: bold;
-      margin-bottom: 10px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
     }
 
     .section-title {
-      font-size: clamp(34px, 5vw, 55px);
+      font-size: clamp(38px, 5vw, 65px);
       line-height: 1;
       text-transform: uppercase;
-      margin-bottom: 45px;
+      margin-bottom: 55px;
     }
 
     /* SERVICES */
 
-    .services {
-      background: #101010;
+    .services-photo {
+      width: 100%;
+      height: 300px;
+      margin-bottom: 45px;
+      overflow: hidden;
+      border-radius: 2px;
     }
 
-    .service-grid {
+    .services-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
     .service-card {
-      background: #161616;
+      background: #111111;
       border: 1px solid #292929;
       padding: 32px;
       min-height: 190px;
@@ -244,11 +228,15 @@
 
     .service-card p {
       margin-top: 10px;
-      color: #999;
+      color: #999999;
       font-size: 14px;
     }
 
     /* ABOUT */
+
+    .about {
+      background: #0d0d0d;
+    }
 
     .about-grid {
       display: grid;
@@ -258,7 +246,7 @@
     }
 
     .about-text p {
-      color: #aaa;
+      color: #aaaaaa;
       margin-bottom: 20px;
       font-size: 16px;
     }
@@ -271,7 +259,7 @@
 
     .feature {
       padding: 16px;
-      background: #111;
+      background: #151515;
       border-left: 3px solid #d4af37;
     }
 
@@ -281,131 +269,101 @@
     }
 
     .feature span {
-      color: #999;
+      color: #999999;
       font-size: 14px;
     }
 
     .about-box {
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle, rgba(212,175,55,0.22), transparent 35%),
-        #111;
-     border: none;
-      position: relative;
+      height: 430px;
       overflow: hidden;
+      background: #111111;
     }
 
-    .about-box::before {
-      content: "MLC";
-      font-size: 130px;
-      font-weight: 900;
-      color: rgba(255,255,255,0.035);
-      position: absolute;
+    .about-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-   .about-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  position: absolute;
-  inset: 0;
-}
     /* REVIEWS */
 
-    .reviews {
-      background: #101010;
-    }
-
-    .review-grid {
+    .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
     .review {
-      background: #161616;
+      background: #111111;
       border: 1px solid #292929;
       padding: 30px;
     }
 
     .stars {
       color: #d4af37;
-      letter-spacing: 3px;
       font-size: 18px;
+      margin-bottom: 18px;
     }
 
     .review p {
-      color: #c4c4c4;
-      margin: 20px 0;
+      color: #bbbbbb;
       font-size: 15px;
+      margin-bottom: 20px;
     }
 
     .review strong {
-      font-size: 14px;
+      font-size: 13px;
     }
 
     /* LOCATION */
 
+    .location {
+      background: #0d0d0d;
+    }
+
     .location-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 25px;
     }
 
-    .location-card {
+    .location-box {
+      background: #111111;
       border: 1px solid #292929;
-      background: #111;
-      padding: 35px;
+      padding: 40px;
     }
 
-    .location-card h3 {
+    .location-box h3 {
       color: #d4af37;
-      margin-bottom: 12px;
       text-transform: uppercase;
-    }
-
-    .location-card p {
-      color: #aaa;
-    }
-
-    .map-box {
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: #151515;
-      border: 1px solid #292929;
-      padding: 25px;
-    }
-
-    .map-icon {
-      font-size: 50px;
       margin-bottom: 15px;
+    }
+
+    .location-box p {
+      color: #aaaaaa;
+      margin-bottom: 8px;
     }
 
     /* CTA */
 
     .cta {
-      background:
-        linear-gradient(rgba(212,175,55,0.08), rgba(212,175,55,0.08)),
-        #0b0b0b;
       text-align: center;
+      padding: 120px 25px;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+        url("pexels-orlovamaria-4969842.jpg") center/cover no-repeat;
     }
 
     .cta h2 {
-      font-size: clamp(38px, 6vw, 70px);
-      text-transform: uppercase;
+      font-size: clamp(40px, 6vw, 75px);
       line-height: 1;
-      margin-bottom: 20px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
     }
 
     .cta p {
-      color: #999;
+      color: #bbbbbb;
       margin-bottom: 30px;
     }
 
@@ -413,29 +371,19 @@
 
     footer {
       padding: 35px 25px;
-      border-top: 1px solid #242424;
       text-align: center;
-      background: #070707;
-    }
-
-    footer .footer-name {
-      font-weight: bold;
-      font-size: 18px;
+      background: #050505;
+      border-top: 1px solid #222222;
     }
 
     footer p {
-      color: #777;
+      color: #777777;
       font-size: 12px;
-      margin-top: 10px;
     }
 
     .demo-note {
-      margin: 20px auto 0;
-      max-width: 700px;
-      padding: 12px;
-      border: 1px solid #333;
-      color: #777;
-      font-size: 11px;
+      margin-top: 10px;
+      color: #555555;
     }
 
     /* MOBILE */
@@ -451,31 +399,36 @@
       }
 
       .hero h1 {
-        letter-spacing: -2px;
+        font-size: 55px;
       }
 
-      .hero p {
-        font-size: 16px;
+      section {
+        padding: 75px 20px;
       }
 
-      .service-grid,
-      .review-grid,
-      .about-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-box {
+        height: 300px;
+      }
+
       .location-grid {
         grid-template-columns: 1fr;
       }
 
-      .about-box {
-        min-height: 280px;
-      }
-
-      section {
-        padding: 70px 20px;
-      }
-
-      .hero-content {
-        padding-left: 20px;
-        padding-right: 20px;
+      .services-photo {
+        height: 220px;
       }
     }
   </style>
@@ -486,8 +439,11 @@
   <!-- NAVIGATION -->
 
   <nav>
-    <div class="nav-container">
-      <a href="#home" class="logo">MAJOR <span>LEAGUE</span> CUTS</a>
+    <div class="nav-inner">
+
+      <div class="logo">
+        MAJOR <span>LEAGUE</span> CUTS
+      </div>
 
       <div class="nav-links">
         <a href="#services">Services</a>
@@ -495,296 +451,361 @@
         <a href="#reviews">Reviews</a>
         <a href="#location">Location</a>
       </div>
+
     </div>
   </nav>
 
 
   <!-- HERO -->
 
-  <section class="hero" id="home">
+  <section class="hero">
+
     <div class="hero-content">
 
-      <div class="eyebrow">PHILADELPHIA • PENNSYLVANIA</div>
+      <small>Philadelphia • Pennsylvania</small>
 
       <h1>
         Look Sharp.<br>
-        Feel <span>Confident.</span>
+        <span>Feel Confident.</span>
       </h1>
 
       <p>
-        Skilled barbers. Friendly service. Good prices.
-        Visit Major League Cuts on Market Street in Philadelphia.
+        Professional barbering with skilled service,
+        great prices and styles made for you.
       </p>
 
-      <div class="hero-buttons">
-        <a class="btn btn-gold" href="tel:+12157471119">
-          CALL NOW
+      <div class="buttons">
+
+        <a class="button" href="tel:+12157471119">
+          Call Now
         </a>
 
-        <a class="btn btn-outline"
-           href="https://www.google.com/maps/search/?api=1&query=Major+League+Cuts+5124+Market+St+Philadelphia+PA+19139"
-           target="_blank">
-          GET DIRECTIONS
+        <a
+          class="button button-outline"
+          href="https://www.google.com/maps/search/?api=1&query=5124+Market+St+Philadelphia+PA+19139"
+          target="_blank">
+          Get Directions
         </a>
+
       </div>
 
     </div>
+
   </section>
 
 
   <!-- SERVICES -->
 
-  <section class="services" id="services">
+  <section id="services">
+
     <div class="container">
 
-      <div class="section-label">What We Do</div>
+      <div class="section-label">
+        What We Offer
+      </div>
 
       <h2 class="section-title">
         Fresh Cut.<br>
         Every Time.
       </h2>
 
-    <div class="service-image">
-  <img src="pexels-th2city-2318055.jpg" alt="Barber at work">
-</div>
 
-<div class="services-grid">
+      <div class="services-photo">
 
-  <div class="service-card">
+        <img
+          src="pexels-th2city-2318055.jpg"
+          alt="Professional barber at work">
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <div class="service-card">
           <div class="service-number">01</div>
+
           <h3>Haircuts</h3>
+
           <p>
             Clean, sharp cuts tailored to your preferred style.
           </p>
         </div>
 
+
         <div class="service-card">
           <div class="service-number">02</div>
+
           <h3>Fades</h3>
+
           <p>
             Detailed fades with attention to clean lines and finishing.
           </p>
         </div>
 
+
         <div class="service-card">
           <div class="service-number">03</div>
+
           <h3>Beard Trim</h3>
+
           <p>
             Keep your beard clean, shaped and looking its best.
           </p>
         </div>
 
+
         <div class="service-card">
           <div class="service-number">04</div>
+
           <h3>Line Up</h3>
+
           <p>
             Crisp edges and precise detailing to complete your look.
           </p>
         </div>
 
+
         <div class="service-card">
           <div class="service-number">05</div>
+
           <h3>Kids Cuts</h3>
+
           <p>
             Fresh styles for younger clients in a comfortable shop.
           </p>
         </div>
 
+
         <div class="service-card">
           <div class="service-number">06</div>
+
           <h3>Style & Finish</h3>
+
           <p>
             Finishing touches designed to keep your cut looking sharp.
           </p>
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
   <!-- ABOUT -->
 
-  <section id="about">
+  <section id="about" class="about">
+
     <div class="container">
 
       <div class="about-grid">
 
         <div class="about-text">
 
-          <div class="section-label">About The Shop</div>
+          <div class="section-label">
+            About The Shop
+          </div>
 
           <h2 class="section-title">
             Built Around<br>
-            The Cut.
+            Great Cuts.
           </h2>
 
           <p>
-            Major League Cuts is a Philadelphia barber shop located on
-            Market Street, offering a variety of barbers and styles.
+            Major League Cuts brings together skilled barbers,
+            friendly service and a variety of styles under one roof.
           </p>
 
           <p>
-            Customers describe the shop as friendly, affordable and
-            skilled — making it a place where you can come in and leave
-            feeling fresh.
+            Whether you're looking for a clean everyday cut,
+            a detailed fade or a sharp beard finish, the goal
+            is simple — leave looking your best.
           </p>
+
 
           <div class="feature-list">
 
             <div class="feature">
               <strong>Skilled Barbers</strong>
-              <span>A variety of barbers with different styles.</span>
+              <span>Different styles and experience in one shop.</span>
             </div>
 
             <div class="feature">
               <strong>Friendly Service</strong>
-              <span>A welcoming experience for customers.</span>
+              <span>A welcoming experience for every customer.</span>
             </div>
 
             <div class="feature">
               <strong>Good Prices</strong>
-              <span>Quality service at accessible prices.</span>
+              <span>Quality barbering without unnecessary extras.</span>
             </div>
 
           </div>
 
         </div>
 
-       <div class="about-box">
-  <img src="pexels-orlovamaria-4969842.jpg" alt="Modern barbershop interior">
-</div>
+
+        <div class="about-box">
+
+          <img
+            src="pexels-orlovamaria-4969842.jpg"
+            alt="Modern barbershop interior">
+
+        </div>
+
       </div>
 
     </div>
+
   </section>
 
 
   <!-- REVIEWS -->
 
-  <section class="reviews" id="reviews">
+  <section id="reviews">
+
     <div class="container">
 
-      <div class="section-label">Customer Feedback</div>
+      <div class="section-label">
+        Customer Feedback
+      </div>
 
       <h2 class="section-title">
-        What Customers<br>
+        What People<br>
         Are Saying.
       </h2>
 
-      <div class="review-grid">
+
+      <div class="reviews-grid">
 
         <div class="review">
+
           <div class="stars">★★★★★</div>
+
           <p>
-            “Positive people, Friendly Service, Good Prices,
-            and Skilled Barbers.”
+            "Positive people, Friendly Service, Good Prices,
+            and Skilled Barbers."
           </p>
+
           <strong>Kevin Minggia-Baker</strong>
+
         </div>
 
+
         <div class="review">
+
           <div class="stars">★★★★★</div>
+
           <p>
-            “This place offers a variety of barbers each with
-            it's own unique style.”
+            "This place offers a variety of barbers each
+            with it's own unique style."
           </p>
+
           <strong>William Beattie</strong>
+
         </div>
 
+
         <div class="review">
+
           <div class="stars">★★★★★</div>
+
           <p>
-            “Excellent service and prices.”
+            "Excellent service and prices."
           </p>
+
           <strong>Joy St. Louis</strong>
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
 
   <!-- LOCATION -->
 
-  <section id="location">
+  <section id="location" class="location">
+
     <div class="container">
 
-      <div class="section-label">Find Us</div>
+      <div class="section-label">
+        Find Us
+      </div>
 
       <h2 class="section-title">
         Come Get<br>
-        Your Cut.
+        Fresh.
       </h2>
+
 
       <div class="location-grid">
 
-        <div class="location-card">
+        <div class="location-box">
 
-          <h3>Address</h3>
+          <h3>Location</h3>
 
           <p>
-            5124 Market St<br>
-            Philadelphia, PA 19139<br>
+            5124 Market St
+          </p>
+
+          <p>
+            Philadelphia, PA 19139
+          </p>
+
+          <p>
             United States
           </p>
 
-          <br>
-
-          <h3>Phone</h3>
-
-          <p>
-            <a href="tel:+12157471119">
-              +1 215-747-1119
-            </a>
-          </p>
-
-          <br>
-
-          <a class="btn btn-gold"
-             href="https://www.google.com/maps/search/?api=1&query=Major+League+Cuts+5124+Market+St+Philadelphia+PA+19139"
-             target="_blank">
-            OPEN GOOGLE MAPS
-          </a>
-
         </div>
 
-        <div class="map-box">
 
-          <div class="map-icon">📍</div>
+        <div class="location-box">
 
-          <h3>Market Street</h3>
+          <h3>Call The Shop</h3>
 
           <p>
-            Philadelphia, Pennsylvania
+            +1 215-747-1119
           </p>
+
+          <br>
+
+          <a
+            class="button"
+            href="tel:+12157471119">
+            Call Now
+          </a>
 
         </div>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- CTA -->
+  <!-- CALL TO ACTION -->
 
   <section class="cta">
 
-    <div class="container">
+    <h2>
+      Ready For<br>
+      A Fresh Cut?
+    </h2>
 
-      <h2>Ready For A Fresh Cut?</h2>
+    <p>
+      Call Major League Cuts today.
+    </p>
 
-      <p>
-        Give Major League Cuts a call and find your next style.
-      </p>
-
-      <a class="btn btn-gold" href="tel:+12157471119">
-        CALL +1 215-747-1119
-      </a>
-
-    </div>
+    <a
+      class="button"
+      href="tel:+12157471119">
+      Call +1 215-747-1119
+    </a>
 
   </section>
 
@@ -793,23 +814,14 @@
 
   <footer>
 
-    <div class="footer-name">
-      MAJOR LEAGUE CUTS
-    </div>
-
     <p>
-      5124 Market St, Philadelphia, PA 19139
+      © 2026 Major League Cuts
     </p>
 
-    <p>
-      +1 215-747-1119
+    <p class="demo-note">
+      Website concept created as a demonstration.
+      Images shown are representative and are not claimed to be official shop photographs.
     </p>
-
-    <div class="demo-note">
-      DEMO CONCEPT — This website is a sample design created for
-      presentation purposes and is not the official website of
-      Major League Cuts.
-    </div>
 
   </footer>
 
