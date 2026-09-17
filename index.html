@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Major League Cuts | Philadelphia Barber Shop</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11, 11, 11, 0.92);
+      border-bottom: 1px solid #252525;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #d4a74a;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4a74a;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+        radial-gradient(circle at center, #3b3b3b 0%, #111111 55%, #050505 100%);
+      padding: 120px 25px 80px;
+    }
+
+    .hero-content {
+      max-width: 1150px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #d4a74a;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 750px;
+      font-size: clamp(52px, 8vw, 92px);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: #cccccc;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .primary {
+      background: #d4a74a;
+      color: #111111;
+    }
+
+    .primary:hover {
+      transform: translateY(-2px);
+      background: #e1b75e;
+    }
+
+    .secondary {
+      border: 1px solid #555555;
+      color: white;
+    }
+
+    .secondary:hover {
+      border-color: #d4a74a;
+      color: #d4a74a;
+    }
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #d4a74a;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 55px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      max-width: 650px;
+      color: #bdbdbd;
+      font-size: 17px;
+    }
+
+    .features {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #262626;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .card-number {
+      color: #d4a74a;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #a9a9a9;
+      font-size: 15px;
+    }
+
+    .reviews {
+      background: #111111;
+    }
+
+    .review-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review {
+      background: #181818;
+      border: 1px solid #292929;
+      padding: 28px;
+      border-radius: 8px;
+    }
+
+    .stars {
+      color: #d4a74a;
+      margin-bottom: 18px;
+      letter-spacing: 3px;
+    }
+
+    .review p {
+      color: #dddddd;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .review strong {
+      font-size: 14px;
+    }
+
+    .location-box {
+      margin-top: 40px;
+      background: #151515;
+      border: 1px solid #292929;
+      padding: 35px;
+      border-radius: 8px;
+    }
+
+    .location-box p {
+      color: #bbbbbb;
+      margin: 8px 0;
+    }
+
+    footer {
+      border-top: 1px solid #252525;
+      padding: 35px 25px;
+      text-align: center;
+      color: #777777;
+      font-size: 13px;
+    }
+
+    .demo-note {
+      color: #666666;
+      margin-top: 10px;
+      font-size: 11px;
+    }
+
+    @media (max-width: 800px) {
+      nav a {
+        display: none;
+      }
+
+      .features,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">MAJOR <span>LEAGUE</span> CUTS</div>
+
+      <div>
+        <a href="#about">ABOUT</a>
+        <a href="#reviews">REVIEWS</a>
+        <a href="#location">LOCATION</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="tag">Philadelphia • Market Street</div>
+
+        <h1>Look Sharp.<br>Feel Confident.</h1>
+
+        <p>
+          Major League Cuts is a Philadelphia neighborhood barbershop
+          located on Market Street.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="tel:+12157471119">
+            Call Now
+          </a>
+
+          <a class="btn secondary"
+             href="https://www.google.com/maps/search/?api=1&query=5124+Market+St+Philadelphia+PA+19139"
+             target="_blank">
+            Get Directions
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-label">Why Major League Cuts</div>
+
+        <h2>A LOCAL SHOP<br>WITH PERSONALITY.</h2>
+
+        <p class="intro">
+          Customers describe Major League Cuts as a place with
+          friendly service, good prices, skilled barbers, and a
+          variety of individual barber styles.
+        </p>
+
+        <div class="features">
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <h3>Skilled Barbers</h3>
+            <p>
+              Customers highlight the skill and quality of service
+              they receive at the shop.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <h3>Friendly Service</h3>
+            <p>
+              A welcoming experience is one of the qualities
+              customers mention in their reviews.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <h3>Different Styles</h3>
+            <p>
+              Multiple barbers bring their own individual style
+              and approach to the shop.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="reviews" id="reviews">
+      <div class="container">
+
+        <div class="section-label">Customer Reviews</div>
+
+        <h2>WHAT CUSTOMERS<br>ARE SAYING.</h2>
+
+        <div class="review-grid">
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Positive people, Friendly Service, Good Prices,
+              and Skilled Barbers.”
+            </p>
+            <strong>— Kevin Minggia-Baker</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              “This place offers a variety of barbers each with
+              it's own unique style.”
+            </p>
+            <strong>— William Beattie</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Excellent service and prices.”
+            </p>
+            <strong>— Joy St. Louis</strong>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="location">
+      <div class="container">
+
+        <div class="section-label">Visit Us</div>
+
+        <h2>COME SEE US.</h2>
+
+        <div class="location-box">
+
+          <h3>Major League Cuts</h3>
+
+          <p>
+            5124 Market St,<br>
+            Philadelphia, PA 19139
+          </p>
+
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+12157471119" style="color:#d4a74a;">
+              +1 215-747-1119
+            </a>
+          </p>
+
+          <br>
+
+          <a class="btn primary"
+             href="https://www.google.com/maps/search/?api=1&query=5124+Market+St+Philadelphia+PA+19139"
+             target="_blank">
+            Open in Google Maps
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>© 2026 Major League Cuts — Demo Concept</p>
+    <p class="demo-note">
+      This is an independent demo website concept and is not the official
+      website of Major League Cuts.
+    </p>
+  </footer>
+
+</body>
+</html>
